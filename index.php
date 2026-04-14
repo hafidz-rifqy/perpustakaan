@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+// Cek apakah pengguna belum login
+if (!isset($_SESSION['status_login'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+<?php
 include 'koneksi.php';
 $query = mysqli_query($conn, "SELECT * FROM siswa");
 ?>
