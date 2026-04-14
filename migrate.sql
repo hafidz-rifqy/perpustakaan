@@ -1,0 +1,20 @@
+USE db_perpustakaan;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    whatsapp VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    kelas VARCHAR(50) NOT NULL,
+    role ENUM('user', 'admin') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS otps (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    whatsapp VARCHAR(20) NOT NULL,
+    otp_code VARCHAR(10) NOT NULL,
+    expires_at DATETIME NOT NULL,
+    is_used TINYINT(1) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db   = 'sekolah'; // ← Pastikan ini 'sekolah' bukan database lain
+$db   = 'db_perpustakaan'; // ← Ganti dari 'sekolah' menjadi 'db_perpustakaan'
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
