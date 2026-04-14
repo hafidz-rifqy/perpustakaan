@@ -807,7 +807,6 @@ $query = mysqli_query($conn, "SELECT * FROM siswa");
             const spinner = document.getElementById('loadingSpinner');
             spinner.style.display = 'none';
         });
-
         // Smooth scroll untuk semua link
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
