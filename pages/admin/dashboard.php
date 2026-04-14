@@ -25,20 +25,41 @@ $total_users = $res['total'];
 
 <div class="dashboard-content">
     <div class="glass-panel">
-        <h2 style="margin-bottom:20px;"><i class="fas fa-cogs"></i> Sistem Manajemen</h2>
-        <p style="margin-bottom:30px;">Overview data perpustakaan.</p>
+        <h2 style="margin-bottom:20px;"><i class="fas fa-cogs"></i> Sistem Manajemen Perpustakaan</h2>
+        <p style="margin-bottom:30px;">Selamat datang di panel kontrol. Silakan pilih kategori untuk dikelola.</p>
         
-        <div style="display:flex; gap:20px;">
-            <div style="background:linear-gradient(135deg, #00d2ff, #3a47d5); padding:30px; border-radius:20px; width:250px; color:white; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
-                <i class="fas fa-users" style="font-size:40px; margin-bottom:15px;"></i>
-                <h3>Total Anggota</h3>
-                <h1 style="font-size:48px;"><?= $total_users ?></h1>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px;">
+            <!-- Kelola Buku -->
+            <div style="background:linear-gradient(135deg, #4158D0, #C850C0); padding:30px; border-radius:25px; color:white; box-shadow:0 15px 35px rgba(65, 88, 208, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:20px;">
+                    <i class="fas fa-book" style="font-size:40px; opacity:0.8;"></i>
+                    <a href="kelola_buku.php" style="color:white; background:rgba(255,255,255,0.2); padding:10px 15px; border-radius:12px; text-decoration:none; font-size:14px;">Lihat <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <h3>Kelola Buku</h3>
+                <p style="margin:10px 0 20px; font-size:14px; opacity:0.9;">Koleksi buku perpustakaan.</p>
+                <a href="kelola_buku.php" style="display:block; text-align:center; background:white; color:#4158D0; padding:12px; border-radius:15px; text-decoration:none; font-weight:600;"><i class="fas fa-plus-circle"></i> Tambah Buku</a>
             </div>
-            
-            <div style="background:linear-gradient(135deg, #f2994a, #f2c94c); padding:30px; border-radius:20px; width:250px; color:white; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
-                <i class="fas fa-book" style="font-size:40px; margin-bottom:15px;"></i>
-                <h3>Statistik Buku</h3>
-                <h1 style="font-size:48px;">-</h1>
+
+            <!-- Kelola Anggota -->
+            <div style="background:linear-gradient(135deg, #00b09b, #96c93d); padding:30px; border-radius:25px; color:white; box-shadow:0 15px 35px rgba(0, 176, 155, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:20px;">
+                    <i class="fas fa-users" style="font-size:40px; opacity:0.8;"></i>
+                    <a href="kelola_anggota.php" style="color:white; background:rgba(255,255,255,0.2); padding:10px 15px; border-radius:12px; text-decoration:none; font-size:14px;">Lihat <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <h3>Kelola Anggota</h3>
+                <p style="margin:10px 0 20px; font-size:14px; opacity:0.9;">Manajemen data anggota.</p>
+                <a href="kelola_anggota.php" style="display:block; text-align:center; background:white; color:#00b09b; padding:12px; border-radius:15px; text-decoration:none; font-weight:600;"><i class="fas fa-plus-circle"></i> Tambah Anggota</a>
+            </div>
+
+            <!-- Kelola Peminjaman -->
+            <div style="background:linear-gradient(135deg, #FF512F, #DD2476); padding:30px; border-radius:25px; color:white; box-shadow:0 15px 35px rgba(221, 36, 118, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:20px;">
+                    <i class="fas fa-exchange-alt" style="font-size:40px; opacity:0.8;"></i>
+                    <a href="kelola_peminjaman.php" style="color:white; background:rgba(255,255,255,0.2); padding:10px 15px; border-radius:12px; text-decoration:none; font-size:14px;">Lihat <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <h3>Peminjaman</h3>
+                <p style="margin:10px 0 20px; font-size:14px; opacity:0.9;">Transaksi pinjam buku.</p>
+                <a href="kelola_peminjaman.php" style="display:block; text-align:center; background:white; color:#DD2476; padding:12px; border-radius:15px; text-decoration:none; font-weight:600;"><i class="fas fa-plus-circle"></i> Pinjam Buku</a>
             </div>
         </div>
         
