@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= pageTitle %></title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #bbb; padding: 10px; }
+        th { background: #e9eef5; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1><%= pageTitle %></h1>
+    <p>Jumlah buku: <%= bookList.length %></p>
+    <% if (bookList.length === 0) { %>
+        <p>Belum ada data buku.</p>
+    <% } else { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th><th>Judul</th><th>Penulis</th><th>Tahun</th>
+                </tr>
+            </thead>
+        <tbody>
+            <% bookList.forEach((book, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= book.judul %></td>
+                    <td><%= book.penulis %></td>
+                    <td><%= book.tahun %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+        </table>
+    <% } %>
+</body>
+</html>
